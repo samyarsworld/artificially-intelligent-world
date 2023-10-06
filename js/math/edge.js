@@ -5,13 +5,15 @@ class Edge {
   }
 
   // Draws the straight line edge
-  draw(ctx, width = 2, color = "black") {
+  draw(ctx, { width = 2, color = "black", dash = [] } = {}) {
     ctx.beginPath();
     ctx.strokeStyle = color;
     ctx.lineWidth = width;
+    ctx.setLineDash(dash);
     ctx.moveTo(this.n1.x, this.n1.y);
     ctx.lineTo(this.n2.x, this.n2.y);
     ctx.stroke();
+    ctx.setLineDash([]);
   }
 
   // Checks if edges are the same
