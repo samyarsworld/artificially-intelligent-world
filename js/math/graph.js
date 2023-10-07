@@ -64,4 +64,20 @@ class Graph {
     this.edges = [];
     this.nodes = [];
   }
+
+  static load(savedGraph) {
+    const nodes = savedGraph.nodes.map((node) => new Node(node.x, node.y));
+    const edges = [];
+
+    for (const edge of savedGraph.edges) {
+      edges.push(
+        new Edge(
+          nodes.find((n) => n.equals(edge.n1)),
+          nodes.find((n) => n.equals(edge.n2))
+        )
+      );
+    }
+
+    return new Graph(nodes, edges);
+  }
 }

@@ -16,3 +16,15 @@ function distance(n1, n2) {
   // Use Hypot for better precision on extreme values
   return Math.hypot(n1.x - n2.x, n1.y - n2.y);
 }
+
+function add(n1, n2) {
+  return new Node(n1.x + n2.x, n1.y + n2.y);
+}
+
+function subtract(n1, n2) {
+  return new Node(n1.x - n2.x, n1.y - n2.y);
+}
+
+function scale(n, scale) {
+  return new Node(n.x * scale, n.y * scale);
+}
