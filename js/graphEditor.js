@@ -55,6 +55,7 @@ class GraphEditor {
   #handleMouseDown(event) {
     // Right click
     if (event.button == 2) {
+      //
       if (this.selected) {
         this.selected = null;
       } else if (this.hovered) {
@@ -65,6 +66,13 @@ class GraphEditor {
         this.selected = null;
       }
       this.hovered = null;
+      //
+      // if (this.selected) {
+      //   this.selected = null;
+      // } else if (this.hovered) {
+      //   this.graph.removeNode(this.hovered);
+      //   this.hovered = null;
+      // }
     }
 
     // Left click
